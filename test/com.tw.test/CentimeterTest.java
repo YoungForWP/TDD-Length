@@ -26,4 +26,9 @@ public class CentimeterTest {
     public void test_plus() throws Exception {
         assertEquals(new Centimeter(2), new Centimeter(1).plus(new Centimeter(1)));
     }
+
+    @Test
+    public void test_mixed_operation() throws Exception {
+        assertEquals(new Centimeter(5), new Centimeter(1).plus(new Centimeter(1)).times(2).plus(new Centimeter(1)));
+    }
 }
