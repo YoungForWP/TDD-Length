@@ -1,9 +1,13 @@
 package com.tw;
 
 public class Meter {
-    public int amount;
+    public double amount;
 
     public Meter(int amount) {
+        this.amount = amount;
+    }
+
+    public Meter(double amount) {
         this.amount = amount;
     }
 
@@ -13,13 +17,21 @@ public class Meter {
         if (o == null || getClass() != o.getClass()) return false;
 
         Meter meter = (Meter) o;
-
-        return amount == meter.amount;
+        Double abs = Math.abs(meter.amount - amount);
+        return Double.compare(abs, 0.000001) <= 0;
     }
 
     @Override
     public int hashCode() {
-        return amount;
+        long temp = Double.doubleToLongBits(amount);
+        return (int) (temp ^ (temp >>> 32));
+    }
+
+    @Override
+    public String toString() {
+        return "Meter{" +
+                "amount=" + amount +
+                '}';
     }
 
     public Meter times(int multiplier) {
