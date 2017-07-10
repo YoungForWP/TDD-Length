@@ -16,4 +16,9 @@ public class CentimeterTest {
     public void one_centimeter_not_equals_two_centimeter() throws Exception {
         assertNotEquals(new Centimeter(1), new Centimeter(2));
     }
+
+    @Test
+    public void test_times() throws Exception {
+        assertEquals(new Centimeter(2), new Centimeter(1).times(2));
+    }
 }

@@ -23,4 +23,8 @@ public class Centimeter {
     public int hashCode() {
         return amount;
     }
+
+    public Centimeter times(int multiplier) {
+        return new Centimeter(this.amount * multiplier);
+    }
 }
