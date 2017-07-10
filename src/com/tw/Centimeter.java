@@ -27,4 +27,8 @@ public class Centimeter {
     public Centimeter times(int multiplier) {
         return new Centimeter(this.amount * multiplier);
     }
+
+    public Centimeter plus(Centimeter centimeter) {
+        return new Centimeter(this.amount + centimeter.amount);
+    }
 }

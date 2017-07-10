@@ -21,4 +21,9 @@ public class CentimeterTest {
     public void test_times() throws Exception {
         assertEquals(new Centimeter(2), new Centimeter(1).times(2));
     }
+
+    @Test
+    public void test_plus() throws Exception {
+        assertEquals(new Centimeter(2), new Centimeter(1).plus(new Centimeter(1)));
+    }
 }
