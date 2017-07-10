@@ -25,4 +25,8 @@ public class Meter {
     public Meter times(int multiplier) {
         return new Meter(this.amount * multiplier);
     }
+
+    public Meter plus(Meter meter) {
+        return new Meter(this.amount + meter.amount);
+    }
 }
