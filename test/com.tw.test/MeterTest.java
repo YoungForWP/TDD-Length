@@ -26,4 +26,9 @@ public class MeterTest {
     public void test_plus() throws Exception {
         assertEquals(new Meter(2), new Meter(1).plus(new Meter(1)) );
     }
+
+    @Test
+    public void test_mixed_operation() throws Exception {
+        assertEquals(new Meter(5), new Meter(1).plus(new Meter(1)).times(2).plus(new Meter(1)));
+    }
 }
