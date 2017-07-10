@@ -16,5 +16,9 @@ public class MeterTest {
     public void one_meter_not_equals_two_meter() throws Exception {
         assertNotEquals(new Meter(1), new Meter(2));
     }
-    
+
+    @Test
+    public void test_times() throws Exception {
+        assertEquals(new Meter(2), new Meter(1).times(2));
+    }
 }

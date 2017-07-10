@@ -22,4 +22,7 @@ public class Meter {
         return amount;
     }
 
+    public Meter times(int multiplier) {
+        return new Meter(this.amount * multiplier);
+    }
 }
