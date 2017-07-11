@@ -77,6 +77,12 @@ public static Length millimeter(int amount) {
     }
 
     public Length plus(Length length) {
-        return new Length(this.amount + length.amount, this.kind);
+        Convert convert = new Convert();
+        convert.initRates();
+        if(length.kind.equals(this.kind)){
+            return new Length(this.amount + length.amount, this.kind);
+        }else{
+            return new Length(this.amount + convert.convert(length, this.kind).amount, this.kind);
+        }
     }
 }

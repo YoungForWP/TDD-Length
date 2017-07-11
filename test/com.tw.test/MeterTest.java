@@ -97,4 +97,9 @@ public class MeterTest {
         assertEquals(Length.centimeter(1), convert.convert(Length.centimeter(1), "CM"));
         assertEquals(Length.millimeter(1), convert.convert(Length.millimeter(1), "MM"));
     }
+
+    @Test
+    public void final_test() throws Exception {
+        assertEquals(Length.meter(5), Length.meter(1).plus(Length.centimeter(100)).times(2).plus(Length.millimeter(1000)));
+    }
 }
