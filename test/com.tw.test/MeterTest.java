@@ -63,15 +63,18 @@ public class MeterTest {
     @Test
     public void test_convert_from_cm_to_m() throws Exception {
         assertEquals(Length.meter(1), convert.convert(Length.centimeter(100), "M"));
+        assertEquals(Length.meter(1.5), convert.convert(Length.centimeter(150), "M"));
     }
 
     @Test
     public void test_convert_from_m_to_km() throws Exception {
         assertEquals(Length.kilometer(1), convert.convert(Length.meter(1000), "KM"));
+        assertEquals(Length.kilometer(1.05), convert.convert(Length.meter(1050), "KM"));
     }
 
     @Test
     public void test_convert_from_km_to_m() throws Exception {
         assertEquals(Length.meter(1000), convert.convert(Length.kilometer(1), "M"));
+        assertEquals(Length.meter(1600), convert.convert(Length.kilometer(1.6), "M"));
     }
 }
