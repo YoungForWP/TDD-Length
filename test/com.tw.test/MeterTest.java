@@ -1,5 +1,6 @@
 package com.tw.test;
 
+import com.sun.tools.javac.util.Convert;
 import com.tw.Length;
 import org.junit.Test;
 
@@ -36,4 +37,12 @@ public class MeterTest {
         assertEquals(Length.meter(5), Length.meter(1).plus(Length.meter(1)).times(2).plus(Length.meter(1)));
         assertEquals(Length.meter(10.4), Length.meter(1.8).plus(Length.meter(1.6)).times(2).plus(Length.meter(3.6)));
     }
+
+    @Test
+    public void test_convert_from_m_to_cm() throws Exception {
+        com.tw.Convert convert = new com.tw.Convert();
+        assertEquals(Length.centimeter(100), convert.convert(Length.meter(1), "CM"));
+        assertEquals(Length.centimeter(110), convert.convert(Length.meter(1.1), "CM"));
+    }
+
 }
