@@ -77,4 +77,16 @@ public class MeterTest {
         assertEquals(Length.meter(1000), convert.convert(Length.kilometer(1), "M"));
         assertEquals(Length.meter(1600), convert.convert(Length.kilometer(1.6), "M"));
     }
+
+    @Test
+    public void test_convert_from_m_to_mm() throws Exception {
+        assertEquals(Length.millimeter(1000), convert.convert(Length.meter(1), "MM"));
+        assertEquals(Length.millimeter(1600), convert.convert(Length.meter(1.6), "MM"));
+    }
+
+    @Test
+    public void test_convert_from_mm_to_m() throws Exception {
+        assertEquals(Length.meter(1), convert.convert(Length.millimeter(1000), "M"));
+        assertEquals(Length.meter(1.6), convert.convert(Length.millimeter(1600), "M"));
+    }
 }

@@ -35,6 +35,14 @@ public class Length {
         return new Length(amount, "KM");
     }
 
+public static Length millimeter(int amount) {
+        return new Length(amount, "MM");
+    }
+
+    public static Length millimeter(double amount) {
+        return new Length(amount, "MM");
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
