@@ -9,18 +9,14 @@ public class Convert {
     public void initRates() {
         rates.put(new Pair("M", "MM"), 1000.0);
         rates.put(new Pair("CM", "MM"), 10.0);
+        rates.put(new Pair("KM", "MM"), 1000000.0);
     }
 
     public Length convert(Length length, String toKind) {
         double amount;
-        double rateFromMToMM = rates.get(new Pair("M", "MM"));
-        double rateFromCMToMM = rates.get(new Pair("CM", "MM"));
-
-        if(length.kind.equals("M") && toKind.equals("CM")){
-            amount = length.amount * (rateFromMToMM / rateFromCMToMM);
-        }else {
-            amount = length.amount  * (rateFromCMToMM / rateFromMToMM);
-        }
+        double rateFromSourceToMM = rates.get(new Pair(length.kind, "MM"));
+        double rateFromDestinationToMM = rates.get(new Pair(toKind, "MM"));
+        amount = length.amount * (rateFromSourceToMM / rateFromDestinationToMM);
         return new Length(amount, toKind);
     }
 }

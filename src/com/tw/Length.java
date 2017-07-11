@@ -27,6 +27,14 @@ public class Length {
         return new Length(amount, "CM");
     }
 
+    public static Length kilometer(int amount) {
+        return new Length(amount, "KM");
+    }
+
+    public static Length kilometer(double amount) {
+        return new Length(amount, "KM");
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
