@@ -1,8 +1,10 @@
 package com.tw;
 
+import java.util.HashMap;
+
 public class Length {
-    public double amount;
-    private String kind;
+    double amount;
+    String kind;
 
     public Length(double amount, String kind) {
         this.amount = amount;

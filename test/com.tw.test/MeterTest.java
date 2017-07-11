@@ -1,13 +1,23 @@
 package com.tw.test;
 
-import com.sun.tools.javac.util.Convert;
+import com.tw.Convert;
 import com.tw.Length;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class MeterTest {
+
+    private Convert convert;
+
+    @Before
+    public void setUp() throws Exception {
+        convert = new Convert();
+        convert.initRates();
+    }
+
     @Test
     public void one_meter_equals_one_meter() throws Exception {
         assertEquals(Length.meter(1), Length.meter(1));
@@ -46,9 +56,12 @@ public class MeterTest {
 
     @Test
     public void test_convert_from_m_to_cm() throws Exception {
-        com.tw.Convert convert = new com.tw.Convert();
         assertEquals(Length.centimeter(100), convert.convert(Length.meter(1), "CM"));
         assertEquals(Length.centimeter(110), convert.convert(Length.meter(1.1), "CM"));
     }
 
+    @Test
+    public void test_convert_from_cm_to_m() throws Exception {
+        assertEquals(Length.meter(1), convert.convert(Length.centimeter(100), "M"));
+    }
 }
