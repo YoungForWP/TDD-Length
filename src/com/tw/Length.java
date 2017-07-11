@@ -26,19 +26,24 @@ public class Length {
     }
 
     @Override
-    public int hashCode() {
-        long temp = Double.doubleToLongBits(amount);
-        return (int) (temp ^ (temp >>> 32));
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null ) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Length length = (Length) o;
         Double abs = Math.abs(length.amount - amount);
-        return Double.compare(abs, 0.000001) <= 0;
+        if (Double.compare(abs, 0.000001) > 0) return false;
+        return kind.equals(length.kind);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(amount);
+        result = (int) (temp ^ (temp >>> 32));
+        result = 31 * result + kind.hashCode();
+        return result;
     }
 
     @Override

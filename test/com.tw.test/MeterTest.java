@@ -39,6 +39,12 @@ public class MeterTest {
     }
 
     @Test
+    public void one_meter_not_equals_one_centimeter() throws Exception {
+        assertNotEquals(Length.meter(1), Length.centimeter(1));
+        assertNotEquals(Length.meter(2.6), Length.centimeter(2.6));
+    }
+
+    @Test
     public void test_convert_from_m_to_cm() throws Exception {
         com.tw.Convert convert = new com.tw.Convert();
         assertEquals(Length.centimeter(100), convert.convert(Length.meter(1), "CM"));
