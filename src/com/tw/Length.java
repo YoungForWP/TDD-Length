@@ -4,43 +4,43 @@ import java.util.HashMap;
 
 public class Length {
     double amount;
-    String kind;
+    Kind kind;
 
-    public Length(double amount, String kind) {
+    public Length(double amount, Kind kind) {
         this.amount = amount;
         this.kind = kind;
     }
 
     public static Length meter(int amount) {
-        return new Length(amount, "M");
+        return new Length(amount, Kind.M);
     }
 
     public static Length meter(double amount) {
-        return new Length(amount, "M");
+        return new Length(amount, Kind.M);
     }
 
     public static Length centimeter(int amount) {
-        return new Length(amount, "CM");
+        return new Length(amount, Kind.CM);
     }
 
     public static Length centimeter(double amount) {
-        return new Length(amount, "CM");
+        return new Length(amount, Kind.CM);
     }
 
     public static Length kilometer(int amount) {
-        return new Length(amount, "KM");
+        return new Length(amount, Kind.KM);
     }
 
     public static Length kilometer(double amount) {
-        return new Length(amount, "KM");
+        return new Length(amount, Kind.KM);
     }
 
 public static Length millimeter(int amount) {
-        return new Length(amount, "MM");
+        return new Length(amount, Kind.MM);
     }
 
     public static Length millimeter(double amount) {
-        return new Length(amount, "MM");
+        return new Length(amount, Kind.MM);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.tw.test;
 
 import com.tw.Convert;
+import com.tw.Kind;
 import com.tw.Length;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,46 +57,46 @@ public class MeterTest {
 
     @Test
     public void test_convert_from_m_to_cm() throws Exception {
-        assertEquals(Length.centimeter(100), convert.convert(Length.meter(1), "CM"));
-        assertEquals(Length.centimeter(110), convert.convert(Length.meter(1.1), "CM"));
+        assertEquals(Length.centimeter(100), convert.convert(Length.meter(1), Kind.CM));
+        assertEquals(Length.centimeter(110), convert.convert(Length.meter(1.1), Kind.CM));
     }
 
     @Test
     public void test_convert_from_cm_to_m() throws Exception {
-        assertEquals(Length.meter(1), convert.convert(Length.centimeter(100), "M"));
-        assertEquals(Length.meter(1.5), convert.convert(Length.centimeter(150), "M"));
+        assertEquals(Length.meter(1), convert.convert(Length.centimeter(100), Kind.M));
+        assertEquals(Length.meter(1.5), convert.convert(Length.centimeter(150), Kind.M));
     }
 
     @Test
     public void test_convert_from_m_to_km() throws Exception {
-        assertEquals(Length.kilometer(1), convert.convert(Length.meter(1000), "KM"));
-        assertEquals(Length.kilometer(1.05), convert.convert(Length.meter(1050), "KM"));
+        assertEquals(Length.kilometer(1), convert.convert(Length.meter(1000), Kind.KM));
+        assertEquals(Length.kilometer(1.05), convert.convert(Length.meter(1050), Kind.KM));
     }
 
     @Test
     public void test_convert_from_km_to_m() throws Exception {
-        assertEquals(Length.meter(1000), convert.convert(Length.kilometer(1), "M"));
-        assertEquals(Length.meter(1600), convert.convert(Length.kilometer(1.6), "M"));
+        assertEquals(Length.meter(1000), convert.convert(Length.kilometer(1), Kind.M));
+        assertEquals(Length.meter(1600), convert.convert(Length.kilometer(1.6), Kind.M));
     }
 
     @Test
     public void test_convert_from_m_to_mm() throws Exception {
-        assertEquals(Length.millimeter(1000), convert.convert(Length.meter(1), "MM"));
-        assertEquals(Length.millimeter(1600), convert.convert(Length.meter(1.6), "MM"));
+        assertEquals(Length.millimeter(1000), convert.convert(Length.meter(1), Kind.MM));
+        assertEquals(Length.millimeter(1600), convert.convert(Length.meter(1.6), Kind.MM));
     }
 
     @Test
     public void test_convert_from_mm_to_m() throws Exception {
-        assertEquals(Length.meter(1), convert.convert(Length.millimeter(1000), "M"));
-        assertEquals(Length.meter(1.6), convert.convert(Length.millimeter(1600), "M"));
+        assertEquals(Length.meter(1), convert.convert(Length.millimeter(1000), Kind.M));
+        assertEquals(Length.meter(1.6), convert.convert(Length.millimeter(1600), Kind.M));
     }
 
     @Test
     public void test_convert_same_kind() throws Exception {
-        assertEquals(Length.meter(1), convert.convert(Length.meter(1), "M"));
-        assertEquals(Length.kilometer(1), convert.convert(Length.kilometer(1), "KM"));
-        assertEquals(Length.centimeter(1), convert.convert(Length.centimeter(1), "CM"));
-        assertEquals(Length.millimeter(1), convert.convert(Length.millimeter(1), "MM"));
+        assertEquals(Length.meter(1), convert.convert(Length.meter(1), Kind.M));
+        assertEquals(Length.kilometer(1), convert.convert(Length.kilometer(1), Kind.KM));
+        assertEquals(Length.centimeter(1), convert.convert(Length.centimeter(1), Kind.CM));
+        assertEquals(Length.millimeter(1), convert.convert(Length.millimeter(1), Kind.MM));
     }
 
     @Test

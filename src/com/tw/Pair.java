@@ -1,10 +1,10 @@
 package com.tw;
 
 public class Pair {
-    String from;
-    String to;
+    Kind from;
+    Kind to;
 
-    public Pair(String from, String to) {
+    public Pair(Kind from, Kind to) {
         this.from = from;
         this.to = to;
     }
@@ -16,8 +16,8 @@ public class Pair {
 
         Pair pair = (Pair) o;
 
-        if (!from.equals(pair.from)) return false;
-        return to.equals(pair.to);
+        if (from != pair.from) return false;
+        return to == pair.to;
     }
 
     @Override
